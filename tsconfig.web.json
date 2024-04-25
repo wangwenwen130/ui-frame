@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "./tsconfig.base.json"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "preserve",
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "jsxImportSource": "vue",
+    "types": ["vue", "@types/node", "@vue/runtime-dom", "@vue/compiler-dom"],
+  },
+  "include": [
+    "env.d.ts",
+    "packages/**/*.vue",
+    "packages/**/*.tsx",
+    "packages/**/*.d.ts",
+    "packages/**/*.ts"
+ ],
+  "exclude": [
+    "node_modules",
+    "**/dist",
+    "**/*.md"
+  ]
+}

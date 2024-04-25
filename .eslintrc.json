@@ -1,0 +1,23 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    // 根据项目需求自定义或覆盖规则
+    "prettier/prettier": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        // 对 TypeScript 文件特定的规则调整
+      }
+    }
+  ]
+}

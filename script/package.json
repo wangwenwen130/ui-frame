@@ -1,0 +1,16 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsx ./index.ts",
+    "type": "npx tsx ./buildType.ts",
+    "pack": "npm run start && npm run type"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
