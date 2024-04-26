@@ -1,6 +1,6 @@
 import type { FormRules, FormItemProp, FormValidateCallback } from 'element-plus'
 
-declare namespace AutoForm {
+declare module AutoForm {
   type Arrayable<T> = T | T[]
   export type ObjKey<k> = k extends string | number | symbol ? k : any
 

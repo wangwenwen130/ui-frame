@@ -1,4 +1,4 @@
-declare namespace AutoTable {
+declare module AutoTable {
   export type ObjKey<k> = k extends string | number | symbol ? k : any
 
   export interface Fn<T = any> {

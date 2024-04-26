@@ -1,6 +1,7 @@
 import type { PropType, Slots } from 'vue'
 import type AutoTableType from './types'
 import { isFunction } from '@rh-element/utils'
+import type { TableColumnCtx } from 'element-plus'
 
 export const props = {
   columns: {
@@ -54,7 +55,23 @@ export const props = {
   data: {
     type: Array as PropType<AutoTableType.Recordable[]>,
     default: () => []
+  },
+  combine: {
+    type: Array as PropType<string[]> // 'combineKey', 'property', ''
   }
+}
+
+export const spanMethod = (
+  data: {
+    row: AutoTableType.Recordable
+    column: TableColumnCtx<any>
+    rowIndex: number
+    columnIndex: number
+  },
+  combine: ['combineKey', 'property'],
+  list: AutoTableType.Recordable[]
+) => {
+  const { row, column } = data
 }
 
 export const setIndex = (reserveIndex: boolean, index: number, size: number, current: number) => {

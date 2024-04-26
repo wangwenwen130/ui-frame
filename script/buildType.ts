@@ -29,6 +29,7 @@ export const pathRewriter = (module: Module) => {
  */
 export const generateTypesDefinitions = async () => {
   const compilerOptions: CompilerOptions = {
+    declaration: true,
     emitDeclarationOnly: true,
     outDir,
     baseUrl: projRoot,
