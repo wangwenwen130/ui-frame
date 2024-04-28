@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "pnpm run -C script pack"
   },
+  "workspaces": [
+    "packages/*",
+    "script/*"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
     "@vue/compiler-dom": "^3.4.25",
+    "@vue/compiler-sfc": "^3.4.25",
     "@vue/runtime-dom": "^3.4.25",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -31,7 +36,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/fs-extra": "^11.0.4",
     "@types/gulp": "^4.0.17",
-    "@types/node": "^20.12.5",
+    "@types/node": "^20.12.7",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "element-plus": "^2.7.1",

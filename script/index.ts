@@ -8,7 +8,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
 import { pkgRoot, epRoot } from './path'
 import { excludeFiles } from '@rh-element/utils'
-import { generateExternal, writeBundles } from './utils/pack'
+import { writeBundles } from './utils/pack'
 import { buildConfigEntries, target } from './build-info'
 import postcss from 'rollup-plugin-postcss'
 

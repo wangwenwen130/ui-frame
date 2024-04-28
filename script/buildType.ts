@@ -1,7 +1,7 @@
 import process from 'process'
 import path from 'path'
 import { mkdir, readFile, writeFile } from 'fs/promises'
-import * as vueCompiler from 'vue/compiler-sfc'
+import * as vueCompiler from '@vue/compiler-sfc'
 import glob from 'fast-glob'
 import { Project } from 'ts-morph'
 import { excludeFiles } from '@rh-element/utils'
@@ -30,6 +30,7 @@ export const pathRewriter = (module: Module) => {
 export const generateTypesDefinitions = async () => {
   const compilerOptions: CompilerOptions = {
     declaration: true,
+    allowJs: true,
     emitDeclarationOnly: true,
     outDir,
     baseUrl: projRoot,
@@ -76,7 +77,7 @@ export const generateTypesDefinitions = async () => {
 }
 
 async function addSourceFiles(project: Project) {
-  project.addSourceFileAtPath(path.resolve(projRoot, 'env.d.ts'))
+  project.addSourceFileAtPath(path.resolve(projRoot, 'types/vue-shim.d.ts'))
 
   const globSourceFile = '**/*.{js?(x),ts?(x),vue}'
   const filePaths = excludeFiles(

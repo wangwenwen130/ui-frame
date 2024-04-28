@@ -16,7 +16,7 @@
     "rootDir": ".",
     "types": [],
     "paths": {
-      "rh-element/*": ["packages/*"],
+      "@rh-element/*": ["packages/*"],
     }
   },
 
