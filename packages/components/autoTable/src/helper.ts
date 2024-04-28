@@ -57,8 +57,33 @@ export const props = {
     default: () => []
   },
   combine: {
-    type: Array as PropType<string[]> // 'combineKey', 'property', ''
+    type: Object as PropType<{
+      mergeKey: string
+      columns: string[]
+    }>, // property'combineKey', 'property', ''
+    default: () => {
+      return {
+        mergeKey: '',
+        columns: []
+      }
+    }
   }
+}
+
+export const getSpanArr = (list: AutoTableType.Recordable[], key: string) => {
+  if (!key) return new Array(list.length).fill(1)
+  const arr = [1]
+  let idx = 0
+  list.forEach((item, index) => {
+    if (item[key] === list[index - 1][key]) {
+      arr[idx] += 1
+      arr[index] = 0
+    } else {
+      arr[index] = 1
+      idx = index
+    }
+  })
+  return arr
 }
 
 export const spanMethod = (
@@ -68,10 +93,22 @@ export const spanMethod = (
     rowIndex: number
     columnIndex: number
   },
-  combine: ['combineKey', 'property'],
-  list: AutoTableType.Recordable[]
+  property: string[],
+  span: number[]
 ) => {
-  const { row, column } = data
+  const { column, rowIndex } = data
+  if (property.includes(column.property)) {
+    const rowSpan = span[rowIndex]
+    return {
+      rowspan: rowSpan,
+      colspan: 1
+    }
+  } else {
+    return {
+      rowspan: 0,
+      colspan: 0
+    }
+  }
 }
 
 export const setIndex = (reserveIndex: boolean, index: number, size: number, current: number) => {

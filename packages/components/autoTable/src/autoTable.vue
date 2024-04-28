@@ -1,8 +1,9 @@
 <script lang="tsx">
 import { ElTable, ElTableColumn, ElPagination, vLoading } from 'element-plus'
 import { defineComponent, ref, computed, unref, watch, onMounted } from 'vue'
-import { props, setIndex, getSlot } from './helper'
+import { props, setIndex, getSlot, getSpanArr, spanMethod } from './helper'
 import type AutoTableType from './types'
+import type { TableColumnCtx } from 'element-plus'
 
 export default defineComponent({
   name: 'AutoTable',
@@ -202,10 +203,19 @@ export default defineComponent({
       getSelected: () => selections.value
     })
 
+    const getCombineArr = computed(() => getSpanArr(unref(getProps).data, props.combine.mergeKey))
+    const combine = (data: {
+      row: AutoTableType.Recordable
+      column: TableColumnCtx<any>
+      rowIndex: number
+      columnIndex: number
+    }) => spanMethod(data, props.combine.columns, getCombineArr.value)
+
     return () => (
       <div v-loading={unref(getProps).loading}>
         <ElTable
           ref={elTableRef}
+          spanMethod={props.combine.mergeKey && props.combine.columns.length ? combine : undefined}
           data={unref(getProps).data}
           onSelection-change={selectionChange}
           {...unref(getBindValue)}
