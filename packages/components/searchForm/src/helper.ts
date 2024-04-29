@@ -26,11 +26,11 @@ export const props = {
   },
   showRefresh: {
     type: Boolean,
-    default: true
+    default: false
   },
   showColumnVisible: {
     type: Boolean,
-    default: true
+    default: false
   },
   iconSize: {
     type: String,
