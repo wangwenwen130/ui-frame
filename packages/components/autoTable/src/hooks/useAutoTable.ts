@@ -125,10 +125,12 @@ export const useAutoTable = <T = unknown>(config: UseTableConfig<T>) => {
   }
 
   return {
+    tableObject,
     register: (expose: typeof autoTableExpose, instance: Instace) => {
       elTableInstance = instance
       autoTableExpose = expose
     },
+    elTableRef: () => elTableInstance,
     ...methods
   }
 }

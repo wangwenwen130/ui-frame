@@ -80,11 +80,9 @@ export default defineComponent({
     }
 
     const rendeSlots = () => {
-      return Object.keys(slots)
-        .filter((i) => i !== 'actionMore')
-        .map((key) => {
-          return getSlot(slots, key, {})
-        })
+      const allSlots = { ...slots }
+      delete allSlots.actionMore
+      return allSlots
     }
     return () => (
       <AutoForm schema={newSchema.value} {...rprops.value} onRegister={register}>

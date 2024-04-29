@@ -9,7 +9,8 @@
   },
   "workspaces": [
     "packages/*",
-    "script/*"
+    "script/*",
+    "example"
   ],
   "keywords": [],
   "author": "",
