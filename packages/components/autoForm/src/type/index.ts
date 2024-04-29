@@ -1,6 +1,6 @@
 import type { FormRules, FormItemProp, FormValidateCallback } from 'element-plus'
 
-declare module AutoForm {
+declare module AutoFormType {
   type Arrayable<T> = T | T[]
   export type ObjKey<k> = k extends string | number | symbol ? k : any
 
@@ -117,4 +117,6 @@ declare module AutoForm {
   export type GetModel<T> = T extends { model: infer U } ? U : Recordable
 }
 
-export default AutoForm
+export { AutoFormType }
+
+export default AutoFormType

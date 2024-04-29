@@ -1,4 +1,4 @@
-declare module AutoTable {
+declare module AutoTableType {
   export type ObjKey<k> = k extends string | number | symbol ? k : any
 
   export interface Fn<T = any> {
@@ -93,4 +93,5 @@ declare module AutoTable {
     totalPage: number
   }
 }
-export default AutoTable
+export { AutoTableType }
+export default AutoTableType
