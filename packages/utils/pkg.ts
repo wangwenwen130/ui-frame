@@ -17,5 +17,6 @@ export const getPackageDependencies = (
 
 export const getPackageManifest = (pkgPath: string) => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // @ts-ignore
   return require(pkgPath)
 }

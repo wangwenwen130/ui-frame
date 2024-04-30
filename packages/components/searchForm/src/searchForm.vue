@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { defineComponent, computed } from 'vue'
 import { AutoForm, useAutoForm } from '../../autoForm'
-import { props, filterProps, getSlot } from './helper'
+import { props, filterProps } from './helper'
 import { ElButton, ElPopover, ElCheckbox, ElScrollbar } from 'element-plus'
 import Reflash from './reflash.vue'
 import Setting from './setting.vue'

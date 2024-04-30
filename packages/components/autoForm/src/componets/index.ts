@@ -17,7 +17,7 @@ import Radio from './rhRadio.vue'
 import Checkbox from './rhCheckbox.vue'
 import Select from './rhSelect.vue'
 
-export const renderComMap = {
+const renderComMap: Record<string, any> = {
   TimePicker: ElTimePicker,
   TimeSelect: ElTimeSelect,
   DatePicker: ElDatePicker,
@@ -29,7 +29,9 @@ export const renderComMap = {
   Slider: ElSlider,
   Divider: ElDivider,
   ColorPicker: ElColorPicker,
-  Radio: Radio as typeof ElRadio,
-  CheckBox: Checkbox as typeof ElCheckbox,
-  Select: Select as typeof ElSelect
+  Radio: Radio as unknown as typeof ElRadio,
+  CheckBox: Checkbox as unknown as typeof ElCheckbox,
+  Select: Select as unknown as typeof ElSelect
 }
+
+export { renderComMap }
