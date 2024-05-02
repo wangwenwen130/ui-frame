@@ -19,7 +19,8 @@ export const pathRewriter = (module: Module) => {
 
   return (id: string) => {
     // @ts-ignore
-    id = id.replaceAll(`@rh-element/`, `./packages/`)
+  const config = buildConfig[module]
+    id = id.replaceAll(`@rh-element/`, config.bundle.path + '/packages/')
     return id
   }
 }
