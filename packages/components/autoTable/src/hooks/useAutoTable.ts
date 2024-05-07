@@ -31,7 +31,7 @@ export const useAutoTable = <T = unknown>(config: UseTableConfig<T>) => {
   let elTableInstance: Instace
 
   let autoTableExpose: {
-    getSelected: <T = AutoTableType.Recordable>() => T[]
+    getSelected: () => T[]
   }
 
   const isNoRegis = () => {
@@ -97,8 +97,8 @@ export const useAutoTable = <T = unknown>(config: UseTableConfig<T>) => {
       }
     },
     getSelections() {
-      if (isNoRegis()) return
-      return autoTableExpose.getSelected<T>()
+      if (isNoRegis()) return []
+      return autoTableExpose.getSelected()
     },
     setSearchParams(data: AutoTableType.Recordable = {}) {
       if (isNoRegis()) return
