@@ -98,7 +98,7 @@ export const useAutoTable = <T = unknown>(config: UseTableConfig<T>) => {
     },
     getSelections() {
       if (isNoRegis()) return
-      return autoTableExpose.getSelected()
+      return autoTableExpose.getSelected<T>()
     },
     setSearchParams(data: AutoTableType.Recordable = {}) {
       if (isNoRegis()) return
