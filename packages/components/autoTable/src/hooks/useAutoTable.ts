@@ -31,7 +31,7 @@ export const useAutoTable = <T = unknown>(config: UseTableConfig<T>) => {
   let elTableInstance: Instace
 
   let autoTableExpose: {
-    getSelected: () => Promise<AutoTableType.Recordable[]>
+    getSelected: <T = AutoTableType.Recordable>() => T[]
   }
 
   const isNoRegis = () => {
