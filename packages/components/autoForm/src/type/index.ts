@@ -1,4 +1,4 @@
-import type { FormRules, FormItemProp, FormValidateCallback } from 'element-plus'
+import type { FormItemRule, FormItemProp, FormValidateCallback } from 'element-plus'
 
 declare module AutoFormType {
   type Arrayable<T> = T | T[]
@@ -64,7 +64,7 @@ declare module AutoFormType {
   export interface FormItemProps {
     labelWidth?: string | number
     required?: boolean
-    rules?: FormRules
+    rules?: FormItemRule | FormItemRule[]
     error?: string
     showMessage?: boolean
     inlineMessage?: boolean
