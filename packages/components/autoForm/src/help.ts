@@ -23,6 +23,9 @@ export const props = {
     type: Boolean,
     default: false
   },
+  colProps: {
+    type: Object as PropType<AutoForm.ColProps>
+  },
   labelPosition: {
     type: String as PropType<'left' | 'right' | 'top'>,
     default: 'right'

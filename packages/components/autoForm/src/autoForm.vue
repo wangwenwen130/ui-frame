@@ -75,7 +75,10 @@ export default defineComponent({
     }
 
     const renderContent = () => {
-      const { schema = [], isCol } = unref(getProps)
+      let isCol = unref(getProps).isCol
+      const { schema = [], colProps } = unref(getProps)
+
+      if (colProps) isCol = true
 
       return schema
         .filter((v) => !v.hidden)
@@ -85,7 +88,7 @@ export default defineComponent({
           return isDivider ? (
             <Com {...{ contentPosition: 'left', ...item.componentProps }}>{item?.label}</Com>
           ) : isCol ? (
-            <ElCol {...item.colProps}>{renderFormItem(item)}</ElCol>
+            <ElCol {...(item.colProps || props.colProps || {})}>{renderFormItem(item)}</ElCol>
           ) : (
             renderFormItem(item)
           )
