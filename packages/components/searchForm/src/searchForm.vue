@@ -30,6 +30,9 @@ export default defineComponent({
         return <ElCheckbox v-model={item.visible} label={item.label}></ElCheckbox>
       })
 
+    const searchText = computed(() => props.searchText)
+    const resetText = computed(() => props.resetText)
+
     const actionSlots = () => {
       return {
         action: () => {
@@ -58,10 +61,10 @@ export default defineComponent({
               )}
               {props.showSearch && (
                 <ElButton type="primary" onClick={search}>
-                  {props.searchText}
+                  {searchText.value}
                 </ElButton>
               )}
-              {props.showReset && <ElButton onClick={reset}> {props.resetText}</ElButton>}
+              {props.showReset && <ElButton onClick={reset}> {resetText.value}</ElButton>}
               <>{slots.actionMore && slots.actionMore()}</>
             </>
           )
