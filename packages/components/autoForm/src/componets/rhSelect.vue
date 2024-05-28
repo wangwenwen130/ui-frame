@@ -57,7 +57,11 @@ export default defineComponent({
       })
     }
 
-    return () => <ElSelect v-model={model.value}>{renderOptions()}</ElSelect>
+    return () => (
+      <ElSelect v-model={model.value} style={'min-width: 200px'}>
+        {renderOptions()}
+      </ElSelect>
+    )
   }
 })
 </script>
