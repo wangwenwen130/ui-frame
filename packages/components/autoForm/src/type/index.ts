@@ -87,7 +87,7 @@ declare module AutoFormType {
     schema: Schema[]
     model: ModeType
     inline?: boolean
-    rules?: FormRules
+    rules?: Record<string, FormItemRule | FormItemRule[]>
     isCustom?: boolean
     isCol?: boolean
     labelWidth?: string | number

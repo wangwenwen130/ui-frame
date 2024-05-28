@@ -58,10 +58,10 @@ export default defineComponent({
               )}
               {props.showSearch && (
                 <ElButton type="primary" onClick={search}>
-                  搜索
+                  {props.searchText}
                 </ElButton>
               )}
-              {props.showReset && <ElButton onClick={reset}>重置</ElButton>}
+              {props.showReset && <ElButton onClick={reset}> {props.resetText}</ElButton>}
               <>{slots.actionMore && slots.actionMore()}</>
             </>
           )

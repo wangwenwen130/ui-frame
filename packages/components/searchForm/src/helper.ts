@@ -38,6 +38,14 @@ export const props = {
   },
   iconColor: {
     type: String
+  },
+  searchText: {
+    type: String,
+    default: '搜索'
+  },
+  resetText: {
+    type: String,
+    default: '重置'
   }
 }
 
