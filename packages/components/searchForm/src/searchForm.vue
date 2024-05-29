@@ -79,7 +79,10 @@ export default defineComponent({
     }
     const reset = async () => {
       await getElFormRef()?.resetFields()
-      emit('search', formModel())
+      emit('reset', formModel())
+      if (!props.resetNoSearch) {
+        emit('search', formModel())
+      }
     }
 
     const rendeSlots = () => {

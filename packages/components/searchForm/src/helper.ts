@@ -46,6 +46,10 @@ export const props = {
   resetText: {
     type: String,
     default: '重置'
+  },
+  resetNoSearch: {
+    type: Boolean,
+    default: false
   }
 }
 
