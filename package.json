@@ -13,7 +13,7 @@
     "example"
   ],
   "keywords": [],
-  "author": "",
+  "author": "wangwenwen",
   "license": "ISC",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.5.0",
