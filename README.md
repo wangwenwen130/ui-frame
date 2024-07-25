@@ -1,4 +1,4 @@
-### 使用pnpm workspace 搭建基础vue 组件库
+### 使用pnpm workspace 搭建基础vue 组件库，支持typescript
 
 ### AutoForm
  该组件是用来支持通过json数据来渲染Element-ui 表单
