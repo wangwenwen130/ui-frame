@@ -20,7 +20,7 @@
     | (string & object)
  
 ### AutoTable
- 该组件是用来支持通过json数据来渲染Element-ui table
+ 该组件是用来支持通过json数据来渲染Element-ui table，支持自动分页展示，接口请求
  
 ### SearchFrom
  该组件是在Autoform基础上封装的一个搜索表单
