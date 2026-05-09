@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "outDir": "es",
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "baseUrl": "..",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "es",
+    "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@rh-element/*": ["./*"]
+    }
+  },
+  "include": [
+    "../components/**/*.ts",
+    "../components/**/*.tsx",
+    "../components/**/*.vue",
+    "../utils/**/*.ts",
+    "./index.ts",
+    "../../types/vue-shim.d.ts"
+  ],
+  "exclude": ["node_modules", "**/dist", "es", "lib"]
+}

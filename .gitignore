@@ -1,5 +1,7 @@
 node_modules
 dist
-out
 *.log*
-example/*
+
+# Build outputs
+packages/rh-element/es
+packages/rh-element/lib

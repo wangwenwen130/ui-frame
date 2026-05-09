@@ -1,15 +1,8 @@
 {
   "name": "@rh-element/components",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "rh-element components",
   "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build",
-    "typecheck": "tsc",
-    "release": "npm run build && npm publish"
-  },
-  "keywords": [],
-  "author": "",
   "license": "ISC"
 }

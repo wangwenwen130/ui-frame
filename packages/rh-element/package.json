@@ -1,7 +1,7 @@
 {
   "name": "rh-element",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vue 3 component library based on Element Plus",
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "types": "es/index.d.ts",
@@ -24,10 +24,7 @@
       "import": "./es/*.mjs"
     },
     "./es/*": {
-      "types": [
-        "./es/*.d.ts",
-        "./es/*/index.d.ts"
-      ],
+      "types": ["./es/*.d.ts", "./es/*/index.d.ts"],
       "import": "./es/*.mjs"
     },
     "./lib/*.js": {
@@ -35,23 +32,16 @@
       "require": "./lib/*.js"
     },
     "./lib/*": {
-      "types": [
-        "./lib/*.d.ts",
-        "./lib/*/index.d.ts"
-      ],
+      "types": ["./lib/*.d.ts", "./lib/*/index.d.ts"],
       "require": "./lib/*.js"
     },
     "./*": "./*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && vue-tsc --project tsconfig.build.json"
   },
-  "files": [
-    "es/*",
-    "lib/*",
-    "package.json"
-  ],
-  "author": "",
+  "files": ["es/*", "lib/*", "package.json"],
+  "author": "wangwenwen",
   "license": "ISC",
   "peerDependencies": {
     "element-plus": "^2.7.1",
